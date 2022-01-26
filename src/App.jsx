@@ -1,89 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
-import tw from "tailwind-styled-components"
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 import './App.css';
 
-const Container = tw.div`
-    flex
-    items-center
-    justify-center
-    flex-col
-    w-full
-    bg-indigo-600
+import AboutMe from './pages/AboutMe';
+
+const ScrollView = styled.div`
+  overscroll-y-auto
 `
 
 function App() {
   return (
-    <div class="flex font-sans ">
-      <form class="flex-auto p-6">
-        <div class="flex flex-wrap">
-          <h1 class="flex-auto text-lg font-semibold text-slate-900">
-            Classic Utility Jacket
-          </h1>
-          <Container>
-            test
-          </Container>
-          <div class="text-lg font-semibold text-slate-500">
-            $110.00
-          </div>
-          <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2">
-            In stock
-          </div>
-        </div>
-        <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-          <div class="space-x-2 flex text-sm">
-            <label>
-              <input class="sr-only peer" name="size" type="radio" value="xs" checked />
-              <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                XS
-              </div>
-            </label>
-            <label>
-              <input class="sr-only peer" name="size" type="radio" value="s" />
-              <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                S
-              </div>
-            </label>
-            <label>
-              <input class="sr-only peer" name="size" type="radio" value="m" />
-              <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                M
-              </div>
-            </label>
-            <label>
-              <input class="sr-only peer" name="size" type="radio" value="l" />
-              <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                L
-              </div>
-            </label>
-            <label>
-              <input class="sr-only peer" name="size" type="radio" value="xl" />
-              <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                XL
-              </div>
-            </label>
-          </div>
-        </div>
-        <div class="flex space-x-4 mb-6 text-sm font-medium">
-          <div class="flex-auto flex space-x-4">
-            <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
-              Buy now
-            </button>
-            <button class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
-              Add to bag
-            </button>
-          </div>
-          <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
-            <svg width="20" height="20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-            </svg>
-          </button>
-        </div>
-        <p class="text-sm text-slate-700">
-          Free shipping on all continental US orders.
-        </p>
-      </form>
-    </div>
+    <ScrollView>
+      {/* <div>
+            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Pricing
+            </a>
+            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Docs
+            </a>
+                <nav className="navbar navbar-default navbar-fixed-top">
+                    <div className="container-fluid">
+                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul className="nav navbar-nav">
+                        <li><Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} >Test 1</Link></li>
+                        <li><Link activeClass="active" className="test2" to="test2" spy={true} smooth={true} duration={500}>Test 2</Link></li>
+                        <li><Link activeClass="active" className="test3" to="test3" spy={true} smooth={true} duration={500} >Test 3</Link></li>
+                        <li><Link activeClass="active" className="test4" to="test4" spy={true} smooth={true} duration={500}>Test 4</Link></li>
+                        </ul>
+                    </div>
+                    </div>
+                </nav>
+
+                <Element name="test1" className="element h-80 bg-slate-500" >
+                    test 1
+                </Element>
+
+                <Element name="test2" className="element h-80">
+                    test 2
+                </Element>
+
+                <Element name="test3" className="element h-80">
+                    test 3
+                </Element>
+
+                <Element name="test4" className="element h-80">
+                    test 4
+                </Element>
+                <Element name="test5" className="element h-80">
+                    test 5
+                </Element>
+                <Element name="test6" className="element h-80">
+                    test 6
+                </Element> */}
+      <AboutMe />
+      <div style={{height : "500px", backgroundColor : "gray"}}/>
+      <div style={{height : "500px", backgroundColor : "blue"}}/>
+      {/* </div> */}
+    </ScrollView>
   );
 }
 

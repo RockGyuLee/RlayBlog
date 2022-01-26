@@ -38,8 +38,12 @@ module.exports = {
                 use: [
                     {
                         loader: 'file-loader',
+                        options : {
+                            name : 'imgs/[name].[ext]'
+                        }
                     },
                 ],
+                
             },
             {
                 test: /\.(mp4)$/i,
@@ -49,17 +53,17 @@ module.exports = {
                     },
                 ],
             },
-            {
-                test: /\.(png|jpg|gif)$/i,
-                use: [
-                {
-                    loader: 'url-loader',
-                    options: {
-                    limit: 4000
-                    }
-                },
-                ]
-            },
+            // {
+            //     test: /\.(png|jpg|gif)$/i,
+            //     use: [
+            //     {
+            //         loader: 'url-loader',
+            //         options: {
+            //         limit: 4000
+            //         }
+            //     },
+            //     ]
+            // },
             {
                 test: /\.css$/i,
                 use: [
