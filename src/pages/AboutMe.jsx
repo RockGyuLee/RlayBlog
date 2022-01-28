@@ -110,7 +110,7 @@ function MyInfo(props){
 function AboutMe(){
     return(
         <Container>
-            <img className="w-full"  src={rock}/>
+            <img className="w-full opacity-70"  src={rock}/>
             <RlayType>
                 <Ptag>
                     <Typed
