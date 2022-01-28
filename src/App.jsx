@@ -5,6 +5,8 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 import './App.css';
 
 import AboutMe from './pages/AboutMe';
+import Skills from './pages/Skills';
+import Points from './pages/Points';
 
 const ScrollView = styled.div`
   overscroll-y-auto
@@ -55,6 +57,8 @@ function App() {
                     test 6
                 </Element> */}
       <AboutMe />
+      <Points />
+      <Skills />
       <div style={{height : "500px", backgroundColor : "gray"}}/>
       <div style={{height : "500px", backgroundColor : "blue"}}/>
       {/* </div> */}
