@@ -28,11 +28,15 @@ import figma from "../../imgs/figma.png";
 import { Text } from "../components/Text";
 
 const FlexLayout = styled.div`
-    ${ tw` flex`}
+    ${ tw` flex flex-col lg:flex-row`}
+`
+
+const BlockHeader = styled.div`
+    ${tw`mt-4 w-full h-14 flex justify-center items-center border-b-4 pb-4`}
 `
 
 const ItemBlock = styled(Row)`
-    ${tw` relative w-1/3 m-3 flex-wrap pb-4 shadow-2xl`};
+    ${tw` relative w-full lg:w-1/3 m-3 flex-wrap pb-4 shadow-2xl`};
     transform: translate(0%);
     transition: 0.2s ease-out;
     
@@ -43,7 +47,7 @@ const ItemBlock = styled(Row)`
 `
 
 const MiddleBlock = styled.div`
-    ${tw`flex-wrap pb-4 flex mb-4 bg-white rounded-md shadow-2xl    `}
+    ${tw`flex-wrap  pb-4 flex mb-4 bg-white rounded-md shadow-2xl    `}
     transform: translate(0%);
     transition: 0.2s ease-out;
     
@@ -67,9 +71,9 @@ function Skills(){
             <SectionTitle title="Skills" id="Skills"/>
             <FlexLayout>
                 <ItemBlock>
-                    <div className="mt-4 w-full h-14 flex justify-center items-center border-b-4 pb-4">
+                    <BlockHeader>
                         <CenterText>FrontEnd</CenterText>
-                    </div>
+                    </BlockHeader>
                     <SkillItem className="h-44" src={htmlcssjs}/>
                     <SkillItem className="h-32" src={react}/>
                     <SkillItem className="h-28 p-8" src={recoil}/>
@@ -78,20 +82,20 @@ function Skills(){
                     <SkillItem className="h-44 p-8" src={android}/>
                     <SkillItem className="h-44 p-4" src={tailwind}/>
                 </ItemBlock>
-                <div className="w-1/3 m-3 flex-wrap">
+                <div className="w-full lg:w-1/3 m-3 flex-wrap">
                     <MiddleBlock className="h-auto ">
-                        <div className="mt-4 w-full h-14 flex justify-center items-center border-b-4 pb-4">
+                        <BlockHeader>
                             <CenterText>BackEnd</CenterText>
-                        </div>
+                        </BlockHeader>
                         <SkillItem className="h-32" src={java}/>
                         <SkillItem className="h-32" src={spring}/>
                         <SkillItem className="h-32" src={python}/>
                         <SkillItem className="h-32" src={django}/>
                     </MiddleBlock>
                     <MiddleBlock className="h-auto">
-                        <div className="mt-4 w-full h-14 flex justify-center items-center border-b-4 pb-4">
-                            <CenterText>Bundler & VersionControl</CenterText>
-                        </div>
+                        <BlockHeader>
+                            <CenterText>Bundler & VCS</CenterText>
+                        </BlockHeader>
                         <SkillItem className="h-32" src={webpack}/>
                         <SkillItem className="h-32" src={git}/>
                     </MiddleBlock>

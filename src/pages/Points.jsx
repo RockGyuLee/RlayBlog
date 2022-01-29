@@ -20,11 +20,11 @@ const RowItem = styled.div`
 `
 
 const Text = styled.p`
-    ${ tw` text-lg`}
+    ${ tw` text-sm md:text-lg lg:text-xl`}
 `
 
 const Title = styled.p`
-    ${ tw` text-2xl	`}
+    ${ tw` text-base ml-4 md:text-xl lg:text-2xl`}
 `
 
 const myPointList = [
@@ -64,7 +64,7 @@ function Points(props){
                                 <br/>
                                 <Title>{i.title}</Title>
                             </RowItem>
-                            <div className="flex items-center w-4/5">
+                            <div className="flex items-center w-4/5 p-4">
                                 <Text>{i.text}</Text>
                             </div>
                         </Roww>

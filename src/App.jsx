@@ -1,67 +1,80 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useState, useEffect} from 'react';
+import tw, {styled} from 'twin.macro';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
+//modules
 import './App.css';
-
+import RockImg from './pages/RockImg';
 import AboutMe from './pages/AboutMe';
 import Skills from './pages/Skills';
 import Points from './pages/Points';
+import { HeaderText, HeaderSubTeext } from './components/Text';
+import Projects from './pages/Projects';
+
+const Header = styled.div`
+  ${tw`z-50	table flex w-full hidden  md:flex lg:flex`}
+  padding : 0% 10%;
+  position : fixed;
+  background-color : ${({scroll})=>scroll > 100 && "white"};
+  color : ${({scroll})=>scroll < 100 && "rgb(148 163 184)"};
+`
+
+const HeadBtn = styled.div`
+  ${tw` m-3`}
+`
 
 const ScrollView = styled.div`
   overscroll-y-auto
 `
 
 function App() {
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  //! header 변경 useEffect
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  });
+
   return (
     <ScrollView>
-      {/* <div>
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Pricing
-            </a>
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Docs
-            </a>
-                <nav className="navbar navbar-default navbar-fixed-top">
-                    <div className="container-fluid">
-                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul className="nav navbar-nav">
-                        <li><Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} >Test 1</Link></li>
-                        <li><Link activeClass="active" className="test2" to="test2" spy={true} smooth={true} duration={500}>Test 2</Link></li>
-                        <li><Link activeClass="active" className="test3" to="test3" spy={true} smooth={true} duration={500} >Test 3</Link></li>
-                        <li><Link activeClass="active" className="test4" to="test4" spy={true} smooth={true} duration={500}>Test 4</Link></li>
-                        </ul>
-                    </div>
-                    </div>
-                </nav>
-
-                <Element name="test1" className="element h-80 bg-slate-500" >
-                    test 1
-                </Element>
-
-                <Element name="test2" className="element h-80">
-                    test 2
-                </Element>
-
-                <Element name="test3" className="element h-80">
-                    test 3
-                </Element>
-
-                <Element name="test4" className="element h-80">
-                    test 4
-                </Element>
-                <Element name="test5" className="element h-80">
-                    test 5
-                </Element>
-                <Element name="test6" className="element h-80">
-                    test 6
-                </Element> */}
-      <AboutMe />
-      <Points />
-      <Skills />
-      <div style={{height : "500px", backgroundColor : "gray"}}/>
-      <div style={{height : "500px", backgroundColor : "blue"}}/>
-      {/* </div> */}
+        <Header className="" scroll={scrollPosition}>
+          <HeadBtn css={{marginRight : "5%"}}>
+            <Link activeClass="active"  to="hi" spy={true} smooth={true} duration={500} ><HeaderText>RockGyu</HeaderText></Link>
+          </HeadBtn>
+          <HeadBtn>
+            <Link activeClass="active"  to="aboutme" spy={true} smooth={true} duration={500} ><HeaderSubTeext>Hi</HeaderSubTeext></Link>
+          </HeadBtn>
+          <HeadBtn>
+            <Link activeClass="active"  to="points" spy={true} smooth={true} duration={500}><HeaderSubTeext>Points</HeaderSubTeext></Link>
+          </HeadBtn>
+          <HeadBtn>
+            <Link activeClass="active"  to="skills" spy={true} smooth={true} duration={500} ><HeaderSubTeext>Skills</HeaderSubTeext></Link>
+          </HeadBtn>
+          <HeadBtn>
+            <Link activeClass="active"  to="projects" spy={true} smooth={true} duration={500} ><HeaderSubTeext>Projects</HeaderSubTeext></Link>
+          </HeadBtn>
+        </Header>
+        <Element name="hi">
+          <RockImg />
+        </Element>
+        <Element name="aboutme">
+          <AboutMe />
+        </Element>
+        <Element name="points">
+          <Points />
+        </Element>
+        <Element name="skills">
+          <Skills />
+        </Element>
+        <Element name="projects">
+          <Projects />
+        </Element>
+        <div style={{height : "1000px", backgroundColor : "blue"}}/>
     </ScrollView>
   );
 }
