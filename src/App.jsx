@@ -10,6 +10,7 @@ import Skills from './pages/Skills';
 import Points from './pages/Points';
 import { HeaderText, HeaderSubTeext } from './components/Text';
 import Projects from './pages/Projects';
+import Footer from './pages/Footer';
 
 const Header = styled.div`
   ${tw`z-50	table flex w-full hidden  md:flex lg:flex`}
@@ -75,6 +76,7 @@ function App() {
           <Projects />
         </Element>
         <div style={{height : "1000px", backgroundColor : "blue"}}/>
+        <Footer />
     </ScrollView>
   );
 }

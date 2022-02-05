@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "react-responsive-carousel": "^3.2.22",
     "react-scripts": "5.0.0",
     "react-scroll": "^1.8.4",
     "react-typed": "^1.2.0",

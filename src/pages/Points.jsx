@@ -24,7 +24,7 @@ const Text = styled.p`
 `
 
 const Title = styled.p`
-    ${ tw` text-base ml-4 md:text-xl lg:text-2xl`}
+    ${ tw` text-base text-center ml-4 md:text-xl lg:text-2xl`}
 `
 
 const myPointList = [
@@ -46,7 +46,7 @@ const myPointList = [
     {
         Icon : <FontAwesomeIcon icon={faHandshake} size="2x"/>,
         title : "서로의 신뢰와 협업",
-        text : "무엇을 하던지 혼자서 하기란 지치고 매우 힘이 듭니다. 서로를 신뢰하고 믿어야 더 좋은 협업이 가능하고 그 결과는 좋은 제품이 나온다고 생각하고 있습니다."
+        text : "무엇을 하던지 혼자서 하기란 매우 지치고 힘이 듭니다. 서로를 신뢰하고 믿어야 더 좋은 협업이 가능하고 그 결과는 좋은 제품이 나온다고 생각하고 있습니다."
     }
 ]
 
