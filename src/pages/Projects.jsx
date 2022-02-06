@@ -70,6 +70,7 @@ const SubTitle = styled.p`
     ${tw` mt-3`}
 `
 
+
 const Contents = styled.div`
     padding-bottom : 10%;
     border-bottom : 1px solid 
@@ -166,35 +167,35 @@ const projectDatas = [
         datas : [
             {
                 path : tbs1,
-                label : "로그인 화면",
+                label : "분석 목록 화면",
             },
             {
                 path : tbs2,
-                label : "메인화면",
+                label : "분석 세팅 화면",
             },
             {
                 path : tbs3,
-                label : "검색 화면",
+                label : "주소 입력 화면",
             },
             {
                 path : tbs4,
-                label : "책 상세 페이지",
+                label : "위치 입력 화면",
             },
             {
                 path : tbs5,
-                label : "로그인 화면",
+                label : "GPS와 가까운 평균온도 자동 표시 화면",
             },
             {
                 path : tbs6,
-                label : "메인화면",
+                label : "부패 점수 리스트 화면",
             },
             {
                 path : tbs7,
-                label : "검색 화면",
+                label : "온도 설정 화면",
             },
             {
                 path : tbs8,
-                label : "책 상세 페이지",
+                label : "분석 결과 화면",
             },
         ],
         contents : `
@@ -216,7 +217,7 @@ const UseContents = ({data}) => {
     return (
         <div className="flex flex-col">
             <div className="flex mt-4">
-                <div className="flex flex-row  items-center w-1/3">
+                <div className="flex flex-row  items-center" style={{width : "30%"}}>
                     <FontAwesomeIcon className="m-4 h-auto mr-8" icon={faHandPointRight} size="2x" />
                     <div className="font-bold" >주요기능</div>
                 </div>
@@ -225,16 +226,16 @@ const UseContents = ({data}) => {
                 </div>
             </div>
             <div className="flex mt-4">
-                <div className="flex flex-row  items-center w-1/3">
+                <div className="flex flex-row  items-center" style={{width : "30%"}}>
                     <FontAwesomeIcon className="m-4 h-auto mr-8" icon={faHandPointRight} size="2x" />
                     <div className=" font-bold">Github</div>
                 </div>
-                <div className="flex  items-center w-2/3 text-base pr-4 font-bold">
+                <div className="flex  items-center w-2/3 text-base  font-bold">
                     {data.link}
                 </div>
             </div>
             <div className="flex mt-4">
-                <div className="flex flex-row  items-center w-1/3">
+                <div className="flex flex-row  items-center" style={{width : "30%"}}>
                     <FontAwesomeIcon className="m-4 h-auto mr-8" icon={faHandPointRight} size="2x" />
                     <div className=" font-bold">BackEnd</div>
                 </div>
@@ -243,7 +244,7 @@ const UseContents = ({data}) => {
                 </div>
             </div>
             <div className="flex mt-4">
-                <div className="flex flex-row  items-center w-1/3">
+                <div className="flex flex-row  items-center" style={{width : "30%"}}>
                     <FontAwesomeIcon className="m-4 h-auto mr-8" icon={faHandPointRight} size="2x" />
                     <div className=" font-bold">FrontEnd</div>
                 </div>
@@ -295,7 +296,7 @@ function Projects(){
                                         ))
                                     }
                                 </Carousel>
-                                <div className=" w-1/2 p-4">
+                                <div className=" w-1/2">
                                     <Contents className="h-fit text-base font-bold">{item.contents}</Contents>
                                     <UseContents data={item.useSkills}/>
                                 </div> 

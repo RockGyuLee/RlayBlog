@@ -22,7 +22,7 @@ const RlayType = styled.div`
 function RockImg(){
     return (
         <Fragment>
-            <img className="w-full opacity-70 sm: h-96"  src={rock}/>
+            <img className="w-full opacity-70 sm: h-96 md:h-auto lg:h-auto"  src={rock}/>
             <RlayType>
                 <Ptag>
                     <Typed

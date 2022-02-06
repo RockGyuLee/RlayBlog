@@ -11,6 +11,7 @@ import Points from './pages/Points';
 import { HeaderText, HeaderSubTeext } from './components/Text';
 import Projects from './pages/Projects';
 import Footer from './pages/Footer';
+import Career from './pages/Career';
 
 const Header = styled.div`
   ${tw`z-50	table flex w-full hidden  md:flex lg:flex`}
@@ -39,7 +40,11 @@ function App() {
   //! header 변경 useEffect
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
-  });
+
+    return () => {
+      window.removeEventListener("scroll", updateScroll)
+    }
+  }, []);
 
   return (
     <ScrollView>
@@ -75,7 +80,9 @@ function App() {
         <Element name="projects">
           <Projects />
         </Element>
-        <div style={{height : "1000px", backgroundColor : "blue"}}/>
+        <Element name="story">
+          <Career />
+        </Element>
         <Footer />
     </ScrollView>
   );
