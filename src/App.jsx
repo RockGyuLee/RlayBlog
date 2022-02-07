@@ -64,6 +64,9 @@ function App() {
           <HeadBtn>
             <Link activeClass="active"  to="projects" spy={true} smooth={true} duration={500} ><HeaderSubTeext>Projects</HeaderSubTeext></Link>
           </HeadBtn>
+          <HeadBtn>
+            <Link activeClass="active"  to="story" spy={true} smooth={true} duration={500} ><HeaderSubTeext>Story</HeaderSubTeext></Link>
+          </HeadBtn>
         </Header>
         <Element name="hi">
           <RockImg />
