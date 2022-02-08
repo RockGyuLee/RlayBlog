@@ -39,9 +39,9 @@ function Career(){
             padding : "2% 15%"
         }}>
             <SectionTitle title="Rock'story" id="story"/>
-            <div style={{overflow : "auto", overflowY : "hidden"}}>
-                <div className="flex" style={{height : "200vh", overflow : "auto", overflowY : "hidden"}}>
-                    <div className="rounded-lg bg-white flex justify-center items-center"style={{
+            <div>
+                <div className="flex flex-col lg:flex-row" >
+                    <div className="rounded-lg bg-white flex  justify-center items-center m-3 lg:flex-row"style={{
                             width : "300px",
                             height : "150px",
                             opacity : (position - 6000) / 200
