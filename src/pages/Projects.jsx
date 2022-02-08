@@ -43,7 +43,7 @@ const imgStyle = {
 }
 
 const ItemBlock = styled(Row)`
-    ${tw` flex w-full m-12 flex-wrap pb-4 shadow-2xl`};
+    ${tw` flex w-full m-3 flex-wrap mb-12 lg:pb-4 shadow-2xl lg:m-12 `};
 `
 const arrowStyles = {
     position: 'absolute',
@@ -216,39 +216,39 @@ const projectDatas = [
 const UseContents = ({data}) => {
     return (
         <div className="flex flex-col">
-            <div className="flex mt-4">
-                <div className="flex flex-row  items-center" style={{width : "30%"}}>
+            <div className="flex mt-4 flex-col lg:flex-row">
+                <div className="flex flex-row  items-center w-auto" >
                     <FontAwesomeIcon className="m-4 h-auto mr-8" icon={faHandPointRight} size="2x" />
                     <div className="font-bold" >주요기능</div>
                 </div>
-                <div className=" flex  items-center w-2/3 text-base font-bold">
+                <div className=" flex  items-center  text-base font-bold ml-6 lg:w-2/3">
                     {data.skill}
                 </div>
             </div>
-            <div className="flex mt-4">
-                <div className="flex flex-row  items-center" style={{width : "30%"}}>
+            <div className="flex mt-4 flex-col lg:flex-row">
+                <div className="flex flex-row  items-center w-auto" >
                     <FontAwesomeIcon className="m-4 h-auto mr-8" icon={faHandPointRight} size="2x" />
                     <div className=" font-bold">Github</div>
                 </div>
-                <div className="flex  items-center w-2/3 text-base  font-bold">
-                    {data.link}
-                </div>
+                <p className="flex  items-center  text-base font-bold  ml-6 break-all lg:w-2/3">
+                    {data.link} 
+                </p>
             </div>
-            <div className="flex mt-4">
-                <div className="flex flex-row  items-center" style={{width : "30%"}}>
+            <div className="flex mt-4 flex-col lg:flex-row">
+                <div className="flex flex-row  items-center w-auto" >
                     <FontAwesomeIcon className="m-4 h-auto mr-8" icon={faHandPointRight} size="2x" />
                     <div className=" font-bold">BackEnd</div>
                 </div>
-                <div className="flex  items-center w-2/3 font-bold">
+                <div className="flex  items-center font-bold ml-6 lg:w-2/3">
                     { data.backEnd}
                 </div>
             </div>
-            <div className="flex mt-4">
-                <div className="flex flex-row  items-center" style={{width : "30%"}}>
+            <div className="flex mt-4 flex-col lg:flex-row">
+                <div className="flex flex-row  items-center w-auto">
                     <FontAwesomeIcon className="m-4 h-auto mr-8" icon={faHandPointRight} size="2x" />
                     <div className=" font-bold">FrontEnd</div>
                 </div>
-                <div className="flex  items-center w-2/3 font-bold" >
+                <div className="flex  items-center font-bold ml-6 lg:w-2/3" >
                     { data.frontEnd}
                 </div>
             </div>
@@ -268,9 +268,9 @@ function Projects(){
                                 <Title>{item.projectName}</Title>
                                 <SubTitle>{item.date}</SubTitle>
                             </div>
-                            <div className=" flex flex-row">
+                            <div className=" flex flex-col w-72 lg:flex-row lg:w-full">
                                 <Carousel
-                                    className="w-1/2 p-4"
+                                    className=" lg:w-1/2 p-4"
                                     statusFormatter={(current, total) => `${current} / ${total}`}
                                     renderArrowPrev={(onClickHandler, hasPrev, label) =>
                                         hasPrev && (
@@ -296,8 +296,8 @@ function Projects(){
                                         ))
                                     }
                                 </Carousel>
-                                <div className=" w-1/2">
-                                    <Contents className="h-fit text-base font-bold">{item.contents}</Contents>
+                                <div className="w-full lg:w-1/2">
+                                    <Contents className="h-fit text-base font-bold p-3">{item.contents}</Contents>
                                     <UseContents data={item.useSkills}/>
                                 </div> 
                             </div>

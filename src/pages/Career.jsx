@@ -34,8 +34,6 @@ function Career(){
         }
     }, [])
 
-    console.log("po",position)
-
     return (
         <div className="bg-orange-50" style={{
             padding : "2% 15%"
